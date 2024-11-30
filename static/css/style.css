@@ -1,0 +1,129 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+html,body{
+    font-family: "Jost";
+    font-size: 20px;
+    line-height: 150%;
+    font-weight: 300;
+}
+._container{
+    max-width: 1280px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0 30px;
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+}
+main{
+    flex: 1 1 auto;
+}
+.cart__content{
+    padding: 100px 0;
+}
+.cart__grid{
+    gap: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+    /* grid-template-areas:
+        "title img img"
+        "text img img"
+        "text img img"
+        "table img img"; */
+}
+/* .title__item{
+    grid-area: title;
+}
+.text__item{
+    grid-area: text;
+}
+.table__item{
+    grid-area: table;
+} */
+.img__item{
+    grid-column-start: 2;
+    grid-column-end: span 2;
+    grid-row-start: 1;
+    grid-row-end: span 4;
+}
+.title__item{
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+}
+.text__item{
+    grid-row: span 2;
+}
+.cart__title{
+    font-size: 64px;
+    font-weight: 300;
+    line-height: 100%;
+}
+
+.cart__img{
+    position: relative;
+}
+.cart__img img{
+    object-fit: cover;
+    width: 100%;
+}
+.cart__table{
+    width: 100%;
+    max-width: 600px;
+}
+
+@media(max-width:992px){
+    ._container{
+        padding: 0 15px;
+    }
+    .cart__content{
+        padding: 70px 0;
+    }
+    .cart__grid{
+        gap: 40px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto);
+    }
+    .img__item{
+        grid-column-start: 1;
+        grid-column-end: span 1;
+        grid-row-start: 2;
+        grid-row-end: span 2;
+    }
+    .title__item{
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+    }
+}
+@media(max-width:480px){
+    .cart__content{
+        padding:50px 0;
+    }
+    .cart__grid{
+        gap: 30px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto);
+    }
+    .img__item{
+        grid-column-start: 1;
+        grid-column-end: span 1;
+        grid-row-start: 2;
+        grid-row-end: span 2;
+    }
+    .title__item{
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+    }
+    .title__item{
+        padding: 0;
+    }
+}
